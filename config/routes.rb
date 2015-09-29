@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/login' => 'users#login'
   post 'users/login' => 'users#check'
   get 'logout' => 'users#logout'
+  get 'users' => 'users#users'
 #delete 'logout' => 'users#logout'
 
   # The priority is based upon order of creation: first created -> highest priority.

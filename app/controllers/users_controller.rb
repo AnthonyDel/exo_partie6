@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   def home
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
-    end
   end
 
   def login
+  end
+
+  def users
+    return head :forbidden unless @current_user.try(:admin?)
+    @users = User.all
   end
 
   def check
